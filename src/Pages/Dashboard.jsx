@@ -224,8 +224,8 @@ const Dashboard = () => {
   const confirmBook = async () => {
     try {
       const res = await parkingAPI.bookSpot(selectedSpot.id);
-      setCurrentRent(res.data); // ← сохраняем rentId и данные аренды
-      await loadSpots(); // обновляем карту
+      setCurrentRent(res.data);
+      await loadSpots();
       alert(`Spot ${selectedSpot.location} book successfully!`);
     } catch (err) {
       alert('Booking error');

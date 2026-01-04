@@ -3,26 +3,21 @@ import Belysamuray from '../assets/belysamuray.svg';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
-  const navigate = useNavigate();
+
   const token = localStorage.getItem('token');
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/login');
+    window.location.href = '/login';
   };
 
   return (
     <header className="relative bg-deepBlack border-b-8 border-samuraiRed overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-darkSlate to-deepBlack opacity-70"></div>
-
       <div className="relative container mx-auto px-6 py-10">
-        {/* Логотип и название по центру */}
+        {/* Logo and Title */}
         <div className="text-center">
-          <img
-            src={Belysamuray}
-            alt="Белый Самурай"
-            className="mx-auto h-32 drop-shadow-2xl animate-pulse-slow"
-          />
+          <img src={Belysamuray} alt="Белый Самурай" className="mx-auto h-32 drop-shadow-2xl animate-pulse-slow" />
           <h1 className="mt-6 text-6xl md:text-7xl font-bold tracking-wider" style={{ fontFamily: 'Zen Kurenaido, serif' }}>
             Samurai Parking
           </h1>
