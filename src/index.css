@@ -1,19 +1,40 @@
-@import "tailwindcss"; /* Це підключає Tailwind 4 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  /* Кольори (Tailwind сам створить класи text-samuraiRed, bg-deepBlack тощо) */
-  --color-samuraiRed: #FF2400;
-  --color-deepBlack: #000000;
-  --color-pureWhite: #FFFFFF;
-  --color-goldAccent: #FFA500;
-  --color-darkSlate: #0F0F0F;
-  --color-bloodRed: #8B0000;
-
-  /* Шрифти */
-  --font-japan: "Noto Sans JP", sans-serif;
-  --font-title: "Zen Kurenaido", serif;
+/* Твои кастомные цвета */
+@layer base {
+  :root {
+    --color-samuraiRed: #FF2400;
+    --color-deepBlack: #000000;
+    --color-pureWhite: #FFFFFF;
+    --color-goldAccent: #FFA500;
+    --color-darkSlate: #0F0F0F;
+    --color-bloodRed: #8B0000;
+  }
 }
 
+/* Кастомные цвета через Tailwind extend (лучший способ) */
+@layer utilities {
+  .bg-samuraiRed { background-color: #FF2400; }
+  .bg-deepBlack { background-color: #000000; }
+  .bg-pureWhite { background-color: #FFFFFF; }
+  .bg-goldAccent { background-color: #FFA500; }
+  .bg-darkSlate { background-color: #0F0F0F; }
+  .bg-bloodRed { background-color: #8B0000; }
+
+  .text-samuraiRed { color: #FF2400; }
+  .text-deepBlack { color: #000000; }
+  .text-pureWhite { color: #FFFFFF; }
+  .text-goldAccent { color: #FFA500; }
+  .text-darkSlate { color: #0F0F0F; }
+  .text-bloodRed { color: #8B0000; }
+
+  .border-samuraiRed { border-color: #FF2400; }
+  .border-bloodRed { border-color: #8B0000; }
+}
+
+/* Глобальные стили */
 body {
   margin: 0;
   font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -21,6 +42,7 @@ body {
   color: #FFFFFF;
 }
 
+/* Кастомный скроллбар */
 * {
   scrollbar-width: thin;
   scrollbar-color: #C41E3A #121212;
@@ -29,16 +51,30 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #121212;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #C41E3A;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #a0172e;
 }
-.animate-pulse {
+
+/* Анимация пульсации */
+.animate-pulse-slow {
   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
