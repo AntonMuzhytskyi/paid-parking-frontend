@@ -67,7 +67,7 @@ const AuthForm = ({ isRegister = false }) => {
           {error && <p className="text-bloodRed text-center mt-6 text-xl">{error}</p>}
 
           <p className="text-center mt-10 text-gray-400 text-lg">
-            {isRegister ? 'Уже есть аккаунт?' : 'Нет аккаунта?'}
+            {isRegister ? 'Already have an account?' : "Don't have an account?"}
             <Link
               to={isRegister ? '/login' : '/register'}
               className="text-samuraiRed hover:text-goldAccent ml-2 font-bold transition"

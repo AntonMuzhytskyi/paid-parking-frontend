@@ -188,7 +188,7 @@ const Dashboard = () => {
       setSpots(merged);
     } catch (err) {
       console.error(err);
-      alert('Ошибка загрузки карты парковки');
+      alert('Error of map loading');
     } finally {
       setLoading(false);
     }
@@ -248,7 +248,7 @@ const Dashboard = () => {
       await loadSpots();
       alert('Booking successfully canceled');
     } catch (err) {
-      alert('Booking cancellation errorы');
+      alert('Booking cancellation error');
       console.error(err);
     } finally {
       setModalType(null);
@@ -278,19 +278,19 @@ const Dashboard = () => {
         {currentRent && (
           <div className="text-center mb-8 p-4 bg-samuraiRed/20 border-2 border-samuraiRed rounded-xl max-w-md mx-auto">
             <p className="text-xl text-goldAccent font-bold">
-              Вы арендовали место: <span className="text-2xl">{currentRent.parkingSpot.location}</span>
+              You have rented spot: <span className="text-2xl">{currentRent.parkingSpot.location}</span>
             </p>
             <button
               onClick={() => setModalType('cancel')}
               className="mt-4 px-6 py-3 bg-bloodRed hover:bg-red-800 rounded-lg font-bold text-xl transition"
             >
-              Отменить аренду
+              Cancel the rental
             </button>
           </div>
         )}
 
         {loading ? (
-          <p className="text-center text-xl text-gray-400">Загрузка карты...</p>
+          <p className="text-center text-xl text-gray-400">Map loading...</p>
         ) : (
           <div className="flex flex-col items-center gap-12 sm:gap-20">
             {blocks.map(letter => (

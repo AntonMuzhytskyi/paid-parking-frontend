@@ -1,5 +1,5 @@
 import React from 'react';
-import Belysamuray from '../assets/belysamuray.svg';
+import Samurailogo from '../assets/samurailogo.svg';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
       <div className="relative container mx-auto px-6 py-10">
         {/* Logo and Title */}
         <div className="text-center">
-          <img src={Belysamuray} alt="Белый Самурай" className="mx-auto h-32 drop-shadow-2xl animate-pulse-slow" />
+          <img src={Samurailogo} alt="Samurai logo" className="mx-auto h-32 drop-shadow-2xl animate-pulse-slow" />
           <h1 className="mt-6 text-6xl md:text-7xl font-bold tracking-wider" style={{ fontFamily: 'Zen Kurenaido, serif' }}>
             Samurai Parking
           </h1>
